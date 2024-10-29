@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.startButton {
+  background-color: #4CAF50;
+  border: #4CAF50;
+  color: white;
+  padding: 100px 150px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 60px;
+  margin: 4px 2px;
+  border-radius: 5px; 
+}
+
+.container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.question {
+  text-align: center;
+  margin: 20px 0;
+  flex-grow: 1; /* 残りのスペースを占める */
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: auto; /* 下部に配置 */
+}
+
+.option {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 32px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  aspect-ratio: 2 / 1; /* 比率を2:1に設定 */
+
+}
+
+.option:hover {
+  background-color: #45a049;
+}
