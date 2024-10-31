@@ -5,19 +5,19 @@ const questions = [
   },
   {
       text: "？",
-      options: ["選択肢A", "選択肢B", "選択肢C", "選択肢D"]
+      options: ["Option A", "Option B", "Option C", "Option D"]
   },
   {
-      text: "別の質問の内容",
-      options: ["選択肢A", "選択肢B", "選択肢C", "選択肢D"]
+      text: "?",
+      options: ["Option A", "Option B", "Option C", "Option D"]
   },
   {
-      text: "さらに別の質問の内容",
-      options: ["選択肢A", "選択肢B", "選択肢C", "選択肢D"]
+      text: "?",
+      options: ["Option A", "Option B", "Option C", "Option D"]
   },
   {
-      text: "最後の質問の内容",
-      options: ["選択肢A", "選択肢B", "選択肢C", "選択肢D"]
+      text: "?",
+      options: ["Option A", "Option B", "Option C", "Option D"]
   }
 ];
 
