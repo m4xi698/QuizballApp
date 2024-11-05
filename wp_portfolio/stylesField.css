@@ -20,17 +20,25 @@ body {
     height: 100vh;
 }
 
-.score-continer{
+.score-container{
     text-align: center;
-    margin: 20px 0;
-    flex-grow: 1; 
+    margin: 20px 0; 
+}
+
+.next-button-container{
+    align-self: center;
+    margin: 20px 0; 
+}
+
+.next-button{
+    align-content: center;
 }
 
 .field-container {
     width: 100%;
     max-width: 800px;
     padding: 20px;
-    align-items: center;
+    align-self: center;
 }
 
 .football-field {

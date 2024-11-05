@@ -12,3 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+let studentScore = 0;
+let dozentenScore = 0;
+
