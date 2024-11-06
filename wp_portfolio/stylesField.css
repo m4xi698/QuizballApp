@@ -141,7 +141,77 @@ body {
     border-right: none;
 }
 
-/* Hover effect */
-.football-field > div:hover {
+.ball-position {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.3);
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
+
+#position-l3 { left: 10%; top: 30%;}
+#position-l2 { left: 25%; top: 70%;}
+#position-l1 { left: 40%; top: 40%;}
+#position-c { left: 50%; top: 50%;}
+#position-r1 { left: 60%; top:60%;}
+#position-r2 { left: 75%; top:30%;}
+#position-r3 { left: 90%; top:40%;}
+
+#ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-color: black;
+    border-width: 5px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: left 0.5s ease, top 0.5s ease;
+}
+
+#goal-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#goal-animation.show {
+    opacity: 1;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
