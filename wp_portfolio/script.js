@@ -47,10 +47,15 @@ function loadQuestion() {
         alert("Alle Quiz sind fertig！");
         return;
     }
-
+    
     const currentQuestionIndex = getRandomQuestionIndex();
     const question = questions[currentQuestionIndex];
-    document.getElementById('question-number').textContent = usedQuestions.length;
+    
+    let questionCounter = parseInt(localStorage.getItem('questionCounter')) || 0;
+    questionCounter++;
+    localStorage.setItem('questionCounter', questionCounter);
+    
+    document.getElementById('question-number').textContent = questionCounter
     document.getElementById('question-text').textContent = question.text;
 
     const options = document.querySelectorAll('.option');
@@ -58,17 +63,25 @@ function loadQuestion() {
         option.textContent = question.options[index];
         option.onclick = () => {
             resetOptionStyles();
+            localStorage.setItem('questionCounter', questionCounter);
             setTimeout(function() {
                 window.location.href = 'field.html';
-                loadQuestion();
             }, 2000);
         };
     });
 }
 
+function resetQuestionCounter() {
+    localStorage.setItem('questionCounter', 0);
+}
+
 document.getElementById('exit-button').onclick = () => {
     window.close();
 };
+
+if (!localStorage.getItem('questionCounter')) {
+    localStorage.setItem('questionCounter', 0);
+}
 
 loadQuestion();
 
