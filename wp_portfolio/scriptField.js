@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const correctButton = document.getElementById('correct-answer');
     const incorrectButton = document.getElementById('incorrect-answer');
     const goalAnimation = document.getElementById('goal-animation');
-
+    const questionCount = document.getElementById('question-number');
+    
     const positions = ['position-l3', 'position-l2', 'position-l1', 'position-c', 'position-r1', 'position-r2', 'position-r3'];
-    let currentPosition = 3; 
+    let currentPosition = parseInt(localStorage.getItem('ballPosition')) || 3; 
 
     function moveBall(direction) {
         currentPosition += direction;
@@ -15,14 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (currentPosition < 0) {
                 dozentenScore.textContent = parseInt(dozentenScore.textContent) + 1;
+                localStorage.setItem('dozentenScore', dozentenScore.textContent);
                 showGoalAnimation('Dozent');
             } else {
                 studentScore.textContent = parseInt(studentScore.textContent) + 1;
+                localStorage.setItem('studentScore', studentScore.textContent);
                 showGoalAnimation('Studenten');
             }
            
             currentPosition = 3;
         }
+        localStorage.setItem('ballPosition', currentPosition);
+        calculateBallPos();
+    }
+
+        function calculateBallPos(){
         const newPosition = document.getElementById(positions[currentPosition]);
         const fieldRect = document.querySelector('.football-field').getBoundingClientRect();
         const newRect = newPosition.getBoundingClientRect();
@@ -62,6 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
         window.close();
     };
     
+    questionCount.textContent = parseInt(localStorage.getItem('questionCounter'))||'1';
+    studentScore.textContent = localStorage.getItem('studentScore') || '0';
+    dozentenScore.textContent = localStorage.getItem('dozentenScore') || '0';
+    calculateBallPos();
 });
 
 
