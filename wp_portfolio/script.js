@@ -58,7 +58,10 @@ function loadQuestion() {
         option.textContent = question.options[index];
         option.onclick = () => {
             resetOptionStyles();
-            loadQuestion();
+            setTimeout(function() {
+                window.location.href = 'field.html';
+                loadQuestion();
+            }, 2000);
         };
     });
 }

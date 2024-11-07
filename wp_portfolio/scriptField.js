@@ -46,10 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('correct-answer').onclick = () => {
         moveBall(1);
+        setTimeout(function() {
+            window.location.href = 'game.html';
+        }, 2000); 
     };
 
     document.getElementById('incorrect-answer').onclick = () => {
         moveBall(-1);
+        setTimeout(function() {
+            window.location.href = 'game.html';
+        }, 2000); 
     };
 
     document.getElementById('exit-button').onclick = () => {
