@@ -43,8 +43,10 @@ function resetOptionStyles() {
 }
 
 function loadQuestion() {
-    if (usedQuestions.length === questions.length) {
-        alert("Alle Quiz sind fertig！");
+    const currentQuestionNumber = parseInt(localStorage.getItem('questionCounter')) || 0;
+    if (currentQuestionNumber >= questions.length) {
+        alert("Alle Quiz sind fertig!");
+        localStorage.clear();
         return;
     }
     

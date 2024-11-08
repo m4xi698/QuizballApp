@@ -1,12 +1,11 @@
 * {
-  margin: 0; /* デフォルトのマージンをリセット */
-  padding: 0; /* デフォルトのパディングをリセット */
-  box-sizing: border-box; /* ボックスサイズを調整 */
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box; 
 }
 
 body {
   font-family: Arial, sans-serif;
-  /* background-color: bisque; */
   display: flex;
   justify-content: center;
   align-items: center;
